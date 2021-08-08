@@ -1,0 +1,1 @@
+enum SuccessIcon { success, info }
