@@ -7,15 +7,15 @@ import 'package:moneyfex_auxagent/widgets/button_widget.dart';
 import 'package:moneyfex_auxagent/widgets/color_widget.dart';
 import 'package:moneyfex_auxagent/widgets/navigator_widget.dart';
 
-class DashboardPage extends StatefulWidget {
+class FundAccountPage extends StatefulWidget {
   final VoidCallback? ontap;
 
-  DashboardPage({Key? key, this.ontap}) : super(key: key);
+  FundAccountPage({Key? key, this.ontap}) : super(key: key);
   @override
-  _DashboardPageState createState() => _DashboardPageState();
+  _FundAccountPageState createState() => _FundAccountPageState();
 }
 
-class _DashboardPageState extends State<DashboardPage> {
+class _FundAccountPageState extends State<FundAccountPage> {
   // void initState() {
   //   super.initState();
   //   showBottomSheet(context);
@@ -299,10 +299,10 @@ class _DashboardPageState extends State<DashboardPage> {
                           icon: Icon(Icons.chevron_right),
                           onPressed: () {
                             setState(() {
-                              controller.animateToPage(bottomSelectedIndex + 1,
-                                  duration: Duration(milliseconds: 500),
-                                  curve: Curves.ease);
-                              //showBottomSheet(context);
+                              // controller.animateToPage(bottomSelectedIndex + 1,
+                              //     duration: Duration(milliseconds: 500),
+                              //     curve: Curves.ease);
+                              showBottomSheet(context);
                             });
                           }),
                     ],
@@ -524,5 +524,193 @@ class _DashboardPageState extends State<DashboardPage> {
         ),
       )),
     );
+  }
+
+  void showBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(25),
+          topRight: Radius.circular(25),
+        )),
+        backgroundColor: fromHex("#EBEDF1"),
+        context: context,
+        builder: (context) {
+          return SingleChildScrollView(
+            child: Container(
+              decoration: BoxDecoration(
+                  color: fromHex("#EBEDF1"),
+                  borderRadius: BorderRadius.all(Radius.circular(50))),
+              height: MediaQuery.of(context).size.width / 0.9,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    'Choose payment method',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(15, 10, 15, 0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: whiteColor,
+                          borderRadius: BorderRadius.all(Radius.circular(25))),
+                      height: MediaQuery.of(context).size.width / 1,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            ListTile(
+                              onTap: () {
+                                // openPage(context,            (ctx) => TransactionEstimationPage());
+                              },
+                              title: Row(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/fundAccountVisa.png',
+                                    alignment: Alignment.center,
+                                    height: 15,
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Saved Credit/Debit Card',
+                                          style: buttomsheetTitle,
+                                          textAlign: TextAlign.left,
+                                        ),
+                                        Text(
+                                          'Saved Credit/Debit Card',
+                                          style: buttomsheetbody,
+                                          textAlign: TextAlign.left,
+                                        ),
+                                        Text(
+                                          'Saved Credit/Debit Card',
+                                          style: buttomsheetsubbody,
+                                          textAlign: TextAlign.left,
+                                        )
+                                      ]),
+                                ],
+                              ),
+                              trailing: Icon(
+                                Icons.arrow_forward_ios,
+                                color: primaryColor,
+                                size: 20,
+                              ),
+                            ),
+                            Divider(
+                              thickness: 1,
+                            ),
+                            ListTile(
+                              onTap: () {
+                                // openPage(context,            (ctx) => TransactionEstimationPage());
+                              },
+                              title: Row(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/fundAccountVisaAndMasterCard.png',
+                                    alignment: Alignment.center,
+                                    height: 40,
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Saved Credit/Debit Card',
+                                          style: buttomsheetTitle,
+                                          textAlign: TextAlign.left,
+                                        ),
+                                        Text(
+                                          'Saved Credit/Debit Card',
+                                          style: buttomsheetbody,
+                                          textAlign: TextAlign.left,
+                                        ),
+                                        Text(
+                                          'Saved Credit/Debit Card',
+                                          style: buttomsheetsubbody,
+                                          textAlign: TextAlign.left,
+                                        )
+                                      ]),
+                                ],
+                              ),
+                              trailing: Icon(
+                                Icons.arrow_forward_ios,
+                                color: primaryColor,
+                                size: 20,
+                              ),
+                            ),
+                            Divider(
+                              thickness: 1,
+                            ),
+                            ListTile(
+                              onTap: () {
+                                // openPage(context,            (ctx) => TransactionEstimationPage());
+                              },
+                              title: Row(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/fundAccountMoneyFexBank.png',
+                                    alignment: Alignment.center,
+                                    height: 40,
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Saved Credit/Debit Card',
+                                          style: buttomsheetTitle,
+                                          textAlign: TextAlign.left,
+                                        ),
+                                        Text(
+                                          'Saved Credit/Debit Card',
+                                          style: buttomsheetbody,
+                                          textAlign: TextAlign.left,
+                                        ),
+                                        Text(
+                                          'Saved Credit/Debit Card',
+                                          style: buttomsheetsubbody,
+                                          textAlign: TextAlign.left,
+                                        )
+                                      ]),
+                                ],
+                              ),
+                              trailing: Icon(
+                                Icons.arrow_forward_ios,
+                                color: primaryColor,
+                                size: 20,
+                              ),
+                            ),
+                            Divider(
+                              thickness: 1,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
+        });
   }
 }

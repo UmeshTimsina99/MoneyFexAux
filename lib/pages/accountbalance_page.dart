@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:moneyfex_auxagent/utils/extensions.dart';
 import 'package:moneyfex_auxagent/widgets/appbar_widget.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:moneyfex_auxagent/widgets/color_widget.dart';
 
 class AccountBalancePage extends StatefulWidget {

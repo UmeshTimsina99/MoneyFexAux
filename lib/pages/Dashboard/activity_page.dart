@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:moneyfex_auxagent/pages/Common/senderList_page.dart';
 import 'package:moneyfex_auxagent/pages/Dashboard/blankactivity_page.dart';
 import 'package:moneyfex_auxagent/widgets/appbar_widget.dart';
 import 'package:moneyfex_auxagent/widgets/color_widget.dart';
 
 import 'dashboard_page.dart';
+import 'fundAccount_Page.dart';
 
 /// This is the stateful widget that the main application instantiates.
 class ActivityPage extends StatefulWidget {
@@ -19,11 +21,10 @@ class _ActivityPageState extends State<ActivityPage> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   List _widgetOptions = [
+    BlankActivityPage(),
     DashboardPage(),
-    BlankActivityPage(),
-    BlankActivityPage(),
-    BlankActivityPage(),
-    BlankActivityPage(),
+    FundAccountPage(),
+    SenderListPage()
   ];
 
   void _onItemTapped(int index) {
@@ -59,12 +60,12 @@ class _ActivityPageState extends State<ActivityPage> {
               ),
               label: 'Fund Account',
             ),
-            // BottomNavigationBarItem(
-            //   icon: ImageIcon(
-            //     AssetImage("assets/images/tabFundAccount.png"),
-            //   ),
-            //   label: 'Fund Account',
-            // ),
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage("assets/images/tabSenders.png"),
+              ),
+              label: 'Senders',
+            ),
             // BottomNavigationBarItem(
             //   icon: ImageIcon(
             //     AssetImage("assets/images/tabFundAccount.png"),
