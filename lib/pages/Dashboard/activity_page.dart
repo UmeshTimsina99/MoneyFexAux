@@ -6,6 +6,7 @@ import 'package:moneyfex_auxagent/widgets/color_widget.dart';
 
 import 'dashboard_page.dart';
 import 'fundAccount_Page.dart';
+import 'menu_page.dart';
 
 /// This is the stateful widget that the main application instantiates.
 class ActivityPage extends StatefulWidget {
@@ -24,7 +25,8 @@ class _ActivityPageState extends State<ActivityPage> {
     BlankActivityPage(),
     DashboardPage(),
     FundAccountPage(),
-    SenderListPage()
+    SenderListPage(),
+    MenuePage()
   ];
 
   void _onItemTapped(int index) {
@@ -66,28 +68,16 @@ class _ActivityPageState extends State<ActivityPage> {
               ),
               label: 'Senders',
             ),
-            // BottomNavigationBarItem(
-            //   icon: ImageIcon(
-            //     AssetImage("assets/images/tabFundAccount.png"),
-            //   ),
-            //   label: 'Activity',
-            // ),
-            // BottomNavigationBarItem(
-            //   icon: ImageIcon(
-            //     AssetImage("assets/images/tabActivity.png"),
-            //   ),
-            //   label: 'Activity',
-            // ),
-            // BottomNavigationBarItem(
-            //   icon: ImageIcon(
-            //     AssetImage("assets/images/tabActivity.png"),
-            //   ),
-            //   label: 'Activity',
-            // ),
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage("assets/images/tabMenu.png"),
+              ),
+              label: 'More',
+            ),
           ],
           currentIndex: _selectedIndex,
           backgroundColor: primaryColor,
-          selectedItemColor: whiteColor,
+          selectedItemColor: blackColor,
           unselectedItemColor: Colors.blue[100],
           onTap: _onItemTapped,
         ),

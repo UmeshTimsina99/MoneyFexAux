@@ -5,12 +5,13 @@ AppBar defaultAppBar({
   Widget? leading,
   String titleText: "",
   List<Widget>? actions,
+  Color? backgroundColor,
 }) {
   return AppBar(
       automaticallyImplyLeading: false,
       centerTitle: true,
       elevation: 0.0,
-      backgroundColor: primaryColor,
+      backgroundColor: backgroundColor == null ? primaryColor : primaryColor,
       leading: leading,
       actions: actions == null ? [] : actions,
       title: Text(

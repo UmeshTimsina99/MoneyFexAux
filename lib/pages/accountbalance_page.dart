@@ -56,15 +56,9 @@ class _AccountBalancePageState extends State<AccountBalancePage> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Image.asset(
-                                          '',
+                                          'assets/images/UK.png',
+                                          fit: BoxFit.cover,
                                         ),
-
-                                        Text('GBP',
-                                            style: TextStyle(
-                                                fontSize: 12,
-                                                color: whiteColor,
-                                                fontWeight: FontWeight.bold)),
-                                        // Text('GBP')
                                       ],
                                     ),
                                     // child: ,
@@ -116,15 +110,9 @@ class _AccountBalancePageState extends State<AccountBalancePage> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Image.asset(
-                                          '',
+                                          'assets/images/UK.png',
+                                          fit: BoxFit.cover,
                                         ),
-
-                                        Text('GBP',
-                                            style: TextStyle(
-                                                fontSize: 12,
-                                                color: whiteColor,
-                                                fontWeight: FontWeight.bold)),
-                                        // Text('GBP')
                                       ],
                                     ),
                                     // child: ,
@@ -176,15 +164,9 @@ class _AccountBalancePageState extends State<AccountBalancePage> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Image.asset(
-                                          '',
+                                          'assets/images/UK.png',
+                                          fit: BoxFit.cover,
                                         ),
-
-                                        Text('GBP',
-                                            style: TextStyle(
-                                                fontSize: 12,
-                                                color: whiteColor,
-                                                fontWeight: FontWeight.bold)),
-                                        // Text('GBP')
                                       ],
                                     ),
                                     // child: ,

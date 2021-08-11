@@ -232,6 +232,7 @@ class _FundAccountPageState extends State<FundAccountPage> {
                   height: 30,
                 ),
                 Container(
+                  alignment: Alignment.topLeft,
                   padding: EdgeInsets.only(left: 50),
                   child: Text(
                     'Exchange rate',
@@ -249,9 +250,10 @@ class _FundAccountPageState extends State<FundAccountPage> {
                           icon: Icon(Icons.chevron_left),
                           onPressed: () {
                             setState(() {
-                              controller.animateToPage(bottomSelectedIndex - 1,
-                                  duration: Duration(milliseconds: 500),
-                                  curve: Curves.ease);
+                              // controller.animateToPage(bottomSelectedIndex - 1,
+                              //     duration: Duration(milliseconds: 500),
+                              //     curve: Curves.ease);
+                              showBottomSheet(context);
                             });
                           }),
                       Container(

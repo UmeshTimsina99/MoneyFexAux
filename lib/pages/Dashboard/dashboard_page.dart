@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
+import 'package:moneyfex_auxagent/pages/SetFee/exchangeFeeList_page.dart';
 import 'package:moneyfex_auxagent/pages/accountbalance_page.dart';
 import 'package:moneyfex_auxagent/utils/extensions.dart';
 import 'package:moneyfex_auxagent/widgets/appbar_widget.dart';
@@ -232,6 +233,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   height: 30,
                 ),
                 Container(
+                  alignment: Alignment.topLeft,
                   padding: EdgeInsets.only(left: 50),
                   child: Text(
                     'Exchange rate',
@@ -351,7 +353,8 @@ class _DashboardPageState extends State<DashboardPage> {
                                   ),
                                   onPressed: () {
                                     // navigateBankTransfer();
-                                    // openPage(  context, (ctx) => BankAccountDeposit());
+                                    openPage(context,
+                                        (ctx) => ExchangeFeeListPage());
                                   },
                                 )),
                                 Column(
