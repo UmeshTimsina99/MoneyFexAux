@@ -364,43 +364,46 @@ class _FundAccountPageState extends State<FundAccountPage> {
                                 )
                               ])),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: whiteColor,
-                            border: Border.all(
-                              color: primaryColor,
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 2,
-                                blurRadius: 4,
-                                offset:
-                                    Offset(0, 3), // changes position of shadow
+                    GestureDetector(
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: whiteColor,
+                              border: Border.all(
+                                color: primaryColor,
                               ),
-                            ],
-                          ),
-                          child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                    child: IconButton(
-                                  icon: Image.asset(
-                                      "assets/images/dashboardExchangeRate.png"),
-                                  onPressed: () {
-                                    //openPage(context, (ctx) => MobileWalletPage());
-                                  },
-                                )),
-                                Column(
-                                  children: [
-                                    Text('Set', style: titleStyle3),
-                                    Text('Transfer Fee', style: titleStyle3),
-                                  ],
-                                )
-                              ])),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 2,
+                                  blurRadius: 4,
+                                  offset: Offset(
+                                      0, 3), // changes position of shadow
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                      child: IconButton(
+                                    icon: Image.asset(
+                                        "assets/images/dashboardExchangeRate.png"),
+                                    onPressed: () {
+                                      //openPage(context, (ctx) => MobileWalletPage());
+                                    },
+                                  )),
+                                  Column(
+                                    children: [
+                                      Text('Set', style: titleStyle3),
+                                      Text('Transfer Fee', style: titleStyle3),
+                                    ],
+                                  )
+                                ])),
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
