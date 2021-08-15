@@ -36,6 +36,9 @@ class _ExchangeFeeListState extends State<ExchangeFeeListPage> {
                   SizedBox(
                     height: 20,
                   ),
+                  SizedBox(
+                    height: 50,
+                  ),
                   Container(
                     padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
                     child: Row(

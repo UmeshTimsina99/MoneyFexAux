@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
+import 'package:moneyfex_auxagent/pages/Accounting/accoutingTransaction_page.dart';
 import 'package:moneyfex_auxagent/pages/SetFee/exchangeFeeList_page.dart';
 import 'package:moneyfex_auxagent/pages/accountbalance_page.dart';
 import 'package:moneyfex_auxagent/utils/extensions.dart';
@@ -324,157 +325,184 @@ class _DashboardPageState extends State<DashboardPage> {
                   mainAxisSpacing: 10,
                   maxCrossAxisExtent: 200.0,
                   children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.all(4.0),
-                      child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: whiteColor,
-                            border: Border.all(
-                              color: primaryColor,
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 2,
-                                blurRadius: 4,
-                                offset:
-                                    Offset(0, 3), // changes position of shadow
+                    GestureDetector(
+                      onTap: () {
+                        openPage(context, (ctx) => ExchangeFeeListPage());
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: whiteColor,
+                              border: Border.all(
+                                color: primaryColor,
                               ),
-                            ],
-                          ),
-                          child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                    child: IconButton(
-                                  icon: Image.asset(
-                                    "assets/images/dashboardExchangeRate.png",
-                                  ),
-                                  onPressed: () {
-                                    // navigateBankTransfer();
-                                    openPage(context,
-                                        (ctx) => ExchangeFeeListPage());
-                                  },
-                                )),
-                                Column(
-                                  children: [
-                                    Text('Set ', style: titleStyle3),
-                                    Text('Exchage rate', style: titleStyle3),
-                                  ],
-                                )
-                              ])),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 2,
+                                  blurRadius: 4,
+                                  offset: Offset(
+                                      0, 3), // changes position of shadow
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                      child: IconButton(
+                                    icon: Image.asset(
+                                      "assets/images/dashboardExchangeRate.png",
+                                    ),
+                                    onPressed: () {
+                                      // navigateBankTransfer();
+                                      openPage(context,
+                                          (ctx) => ExchangeFeeListPage());
+                                    },
+                                  )),
+                                  Column(
+                                    children: [
+                                      Text('Set ', style: titleStyle3),
+                                      Text('Exchage rate', style: titleStyle3),
+                                    ],
+                                  )
+                                ])),
+                      ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: whiteColor,
-                            border: Border.all(
-                              color: primaryColor,
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 2,
-                                blurRadius: 4,
-                                offset:
-                                    Offset(0, 3), // changes position of shadow
+                    GestureDetector(
+                      onTap: () {
+                        openPage(context, (ctx) => ExchangeFeeListPage());
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: whiteColor,
+                              border: Border.all(
+                                color: primaryColor,
                               ),
-                            ],
-                          ),
-                          child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                    child: IconButton(
-                                  icon: Image.asset(
-                                      "assets/images/dashboardExchangeRate.png"),
-                                  onPressed: () {
-                                    //openPage(context, (ctx) => MobileWalletPage());
-                                  },
-                                )),
-                                Column(
-                                  children: [
-                                    Text('Set', style: titleStyle3),
-                                    Text('Transfer Fee', style: titleStyle3),
-                                  ],
-                                )
-                              ])),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 2,
+                                  blurRadius: 4,
+                                  offset: Offset(
+                                      0, 3), // changes position of shadow
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                      child: IconButton(
+                                    icon: Image.asset(
+                                        "assets/images/dashboardExchangeRate.png"),
+                                    onPressed: () {
+                                      openPage(context,
+                                          (ctx) => ExchangeFeeListPage());
+                                    },
+                                  )),
+                                  Column(
+                                    children: [
+                                      Text('Set', style: titleStyle3),
+                                      Text('Transfer Fee', style: titleStyle3),
+                                    ],
+                                  )
+                                ])),
+                      ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: whiteColor,
-                            border: Border.all(
-                              color: primaryColor,
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 2,
-                                blurRadius: 4,
-                                offset:
-                                    Offset(0, 3), // changes position of shadow
+                    GestureDetector(
+                      onTap: () {
+                        openPage(
+                            context, (ctx) => AccoutingTransactionListPage());
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: whiteColor,
+                              border: Border.all(
+                                color: primaryColor,
                               ),
-                            ],
-                          ),
-                          child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                    child: IconButton(
-                                  icon: Image.asset(
-                                      "assets/images/dashboardExchangeRate.png"),
-                                  onPressed: () {
-                                    //openPage(context, (ctx) => CashPickupPage());
-                                  },
-                                )),
-                                Column(
-                                  children: [
-                                    Text('Set', style: titleStyle3),
-                                    Text('Exchage rate', style: titleStyle3),
-                                  ],
-                                )
-                              ])),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 2,
+                                  blurRadius: 4,
+                                  offset: Offset(
+                                      0, 3), // changes position of shadow
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                      child: IconButton(
+                                    icon: Image.asset(
+                                        "assets/images/dashboardExchangeRate.png"),
+                                    onPressed: () {
+                                      openPage(
+                                          context,
+                                          (ctx) =>
+                                              AccoutingTransactionListPage());
+                                    },
+                                  )),
+                                  Column(
+                                    children: [
+                                      Text('Accounting', style: titleStyle3),
+                                    ],
+                                  )
+                                ])),
+                      ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: whiteColor,
-                            border: Border.all(
-                              color: primaryColor,
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 2,
-                                blurRadius: 4,
-                                offset:
-                                    Offset(0, 3), // changes position of shadow
+                    GestureDetector(
+                      onTap: () {
+                        openPage(context, (ctx) => ExchangeFeeListPage());
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: whiteColor,
+                              border: Border.all(
+                                color: primaryColor,
                               ),
-                            ],
-                          ),
-                          child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                    child: IconButton(
-                                  icon: Image.asset(
-                                      "assets/images/dashboardExchangeRate.png"),
-                                  onPressed: null,
-                                )),
-                                Column(
-                                  children: [
-                                    Text('Accounting', style: titleStyle3),
-                                  ],
-                                )
-                              ])),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 2,
+                                  blurRadius: 4,
+                                  offset: Offset(
+                                      0, 3), // changes position of shadow
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                      child: IconButton(
+                                    icon: Image.asset(
+                                        "assets/images/dashboardExchangeRate.png"),
+                                    onPressed: () {
+                                      openPage(context,
+                                          (ctx) => ExchangeFeeListPage());
+                                    },
+                                  )),
+                                  Column(
+                                    children: [
+                                      Text('Fund Account', style: titleStyle3),
+                                    ],
+                                  )
+                                ])),
+                      ),
                     ),
                   ],
                 ),

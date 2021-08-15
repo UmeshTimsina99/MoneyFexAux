@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moneyfex_auxagent/pages/Dashboard/activity_page.dart';
 import 'package:moneyfex_auxagent/pages/SetFee/exchangeFeeAddEdit_page.dart';
 import 'package:moneyfex_auxagent/pages/SetFee/exchangeFeeList_page.dart';
 import 'package:moneyfex_auxagent/pages/loginorsignup_page.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
           ),
           // home: LoginOrSignupView()),
-          home: ExchangeFeeAddEditPage()),
+          home: ActivityPage()),
     );
   }
 }
