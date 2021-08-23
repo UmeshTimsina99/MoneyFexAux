@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
 import 'package:moneyfex_auxagent/pages/Accounting/accoutingTransaction_page.dart';
+import 'package:moneyfex_auxagent/pages/Funding/fundingStatementList_page.dart';
 import 'package:moneyfex_auxagent/pages/SetFee/exchangeFeeList_page.dart';
 import 'package:moneyfex_auxagent/pages/accountbalance_page.dart';
 import 'package:moneyfex_auxagent/utils/extensions.dart';
@@ -400,7 +401,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                   Container(
                                       child: IconButton(
                                     icon: Image.asset(
-                                        "assets/images/dashboardExchangeRate.png"),
+                                        "assets/images/dashboardTransferFee.png"),
                                     onPressed: () {
                                       openPage(context,
                                           (ctx) => ExchangeFeeListPage());
@@ -445,7 +446,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                   Container(
                                       child: IconButton(
                                     icon: Image.asset(
-                                        "assets/images/dashboardExchangeRate.png"),
+                                        "assets/images/dashboardAccounting.png"),
                                     onPressed: () {
                                       openPage(
                                           context,
@@ -463,7 +464,7 @@ class _DashboardPageState extends State<DashboardPage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        openPage(context, (ctx) => ExchangeFeeListPage());
+                        openPage(context, (ctx) => FundingStatementListPage());
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -490,10 +491,10 @@ class _DashboardPageState extends State<DashboardPage> {
                                   Container(
                                       child: IconButton(
                                     icon: Image.asset(
-                                        "assets/images/dashboardExchangeRate.png"),
+                                        "assets/images/dashboardFundingStatement.png"),
                                     onPressed: () {
                                       openPage(context,
-                                          (ctx) => ExchangeFeeListPage());
+                                          (ctx) => FundingStatementListPage());
                                     },
                                   )),
                                   Column(

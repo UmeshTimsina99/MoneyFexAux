@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
 import 'package:moneyfex_auxagent/pages/accountbalance_page.dart';
+import 'package:moneyfex_auxagent/pages/transactionEstimation_page.dart';
 import 'package:moneyfex_auxagent/utils/extensions.dart';
 import 'package:moneyfex_auxagent/widgets/appbar_widget.dart';
 import 'package:moneyfex_auxagent/widgets/button_widget.dart';
@@ -320,7 +321,9 @@ class _BlankActivityPageState extends State<BlankActivityPage> {
                   SizedBox(
                     height: 30,
                   ),
-                  defaultButton(context, 'Transfer money', onPressed: () {}),
+                  defaultButton(context, 'Transfer money', onPressed: () {
+                    openPage(context, (ctx) => TransactionEstimationPage());
+                  }),
                   SizedBox(
                     height: 20,
                   )
