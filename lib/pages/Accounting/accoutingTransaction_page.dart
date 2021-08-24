@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:moneyfex_auxagent/pages/SetFee/exchangeFeeAddEdit_page.dart';
 import 'package:moneyfex_auxagent/utils/extensions.dart';
 import 'package:moneyfex_auxagent/widgets/appbar_widget.dart';
-import 'package:moneyfex_auxagent/widgets/button_widget.dart';
 import 'package:moneyfex_auxagent/widgets/color_widget.dart';
 import 'package:moneyfex_auxagent/widgets/navigator_widget.dart';
 

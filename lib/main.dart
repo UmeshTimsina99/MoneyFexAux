@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:moneyfex_auxagent/pages/Dashboard/activity_page.dart';
-import 'package:moneyfex_auxagent/pages/SetFee/exchangeFeeAddEdit_page.dart';
-import 'package:moneyfex_auxagent/pages/SetFee/exchangeFeeList_page.dart';
-import 'package:moneyfex_auxagent/pages/loginorsignup_page.dart';
 import 'package:overlay_support/overlay_support.dart';
 
 void main() {

@@ -7,9 +7,6 @@ import 'package:moneyfex_auxagent/widgets/appbar_widget.dart';
 import 'package:moneyfex_auxagent/widgets/button_widget.dart';
 import 'package:moneyfex_auxagent/widgets/color_widget.dart';
 import 'package:moneyfex_auxagent/widgets/navigator_widget.dart';
-import 'package:syncfusion_flutter_gauges/gauges.dart';
-
-import 'dashboard_page.dart';
 
 class BlankActivityPage extends StatefulWidget {
   final VoidCallback? ontap;

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:moneyfex_auxagent/pages/Common/senderList_page.dart';
 import 'package:moneyfex_auxagent/pages/Dashboard/blankactivity_page.dart';
-import 'package:moneyfex_auxagent/utils/extensions.dart';
-import 'package:moneyfex_auxagent/widgets/appbar_widget.dart';
 import 'package:moneyfex_auxagent/widgets/color_widget.dart';
-
 import 'dashboard_page.dart';
 import 'fundAccount_Page.dart';
 import 'menu_page.dart';
