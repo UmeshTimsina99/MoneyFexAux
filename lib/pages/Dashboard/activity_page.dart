@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:moneyfex_auxagent/pages/Common/senderList_page.dart';
 import 'package:moneyfex_auxagent/pages/Dashboard/blankactivity_page.dart';
+import 'package:moneyfex_auxagent/utils/extensions.dart';
 import 'package:moneyfex_auxagent/widgets/appbar_widget.dart';
 import 'package:moneyfex_auxagent/widgets/color_widget.dart';
 
@@ -43,32 +44,37 @@ class _ActivityPageState extends State<ActivityPage> {
       ),
       bottomNavigationBar: Container(
         child: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
+          items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
+              backgroundColor: primaryColor,
               icon: ImageIcon(
                 AssetImage("assets/images/tabActivity.png"),
               ),
               label: 'Activity',
             ),
             BottomNavigationBarItem(
+              backgroundColor: primaryColor,
               icon: ImageIcon(
                 AssetImage("assets/images/tabDashboard.png"),
               ),
               label: 'Dashboard',
             ),
             BottomNavigationBarItem(
+              backgroundColor: primaryColor,
               icon: ImageIcon(
                 AssetImage("assets/images/tabFundAccount.png"),
               ),
               label: 'Fund Account',
             ),
             BottomNavigationBarItem(
+              backgroundColor: primaryColor,
               icon: ImageIcon(
                 AssetImage("assets/images/tabSenders.png"),
               ),
               label: 'Senders',
             ),
             BottomNavigationBarItem(
+              backgroundColor: primaryColor,
               icon: ImageIcon(
                 AssetImage("assets/images/tabMenu.png"),
               ),
@@ -77,7 +83,7 @@ class _ActivityPageState extends State<ActivityPage> {
           ],
           currentIndex: _selectedIndex,
           backgroundColor: primaryColor,
-          selectedItemColor: blackColor,
+          selectedItemColor: whiteColor,
           unselectedItemColor: Colors.blue[100],
           onTap: _onItemTapped,
         ),

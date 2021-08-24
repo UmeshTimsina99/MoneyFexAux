@@ -3,6 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:moneyfex_auxagent/widgets/button_widget.dart';
 import 'package:moneyfex_auxagent/widgets/color_widget.dart';
+import 'package:moneyfex_auxagent/widgets/navigator_widget.dart';
+
+import 'Common/senderListForTransaction_page.dart';
 
 class TransactionEstimationPage extends StatefulWidget {
   TransactionEstimationPage({
@@ -670,44 +673,7 @@ class _TransactionEstimationPageState extends State<TransactionEstimationPage> {
                         ),
                   SizedBox(height: 40),
                   defaultButton(context, 'Transfer', onPressed: () {
-                    var sendingAmount = double.tryParse(yousendController.text);
-                    if (sendingAmount == null) {
-                      sendingAmount = 0;
-                    }
-                    if (sendingAmount < 1) {
-                      setState(() {
-                        errormsg = "Enter an amount";
-                      });
-                      return -1;
-                    } else {}
-                    // responseModel.model.receivingPhoneCode =
-                    //     _countryPhoneCode;
-                    // switch (selectedMethod) {
-                    //   case 1:
-                    //openPage(context, (ctx) => BankTransfer());
-
-                    // responseModel.model.transferMethod =
-                    //     TransferMethod.BankDeposit.index;
-                    // navigateBankTransfer();
-                    //   break;
-                    // case 2:
-                    // responseModel.model.transferMethod =
-                    //     TransferMethod.OtherWallet.index;
-                    // openPage(
-                    //     context,
-                    //     (ctx) => MobileAccountform(
-                    //           responseModel: responseModel.model,
-                    //         ));
-                    //   break;
-                    // case 3:
-                    // responseModel.model.transferMethod =
-                    //     TransferMethod.CashPickUp.index;
-                    navigateCashpickup();
-                    //openPage(context, (ctx) => CashPickupForm());
-                    //   break;
-                    // case 4:
-                    //   break;
-                    // default:
+                    openPage(context, (ctx) => SenderListForTansactionPage());
                   }),
                 ],
               ),

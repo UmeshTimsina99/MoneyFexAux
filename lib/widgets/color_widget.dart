@@ -53,3 +53,5 @@ TextStyle circleText = ((TextStyle(
 
 TextStyle deleverystyle = TextStyle(
     fontWeight: FontWeight.normal, color: secondaryColor, fontSize: 10);
+TextStyle flatbuttonStyle =
+    TextStyle(fontWeight: FontWeight.normal, color: whiteColor, fontSize: 20);
