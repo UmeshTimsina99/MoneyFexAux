@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:moneyfex_auxagent/pages/Dashboard/activity_page.dart';
-import 'package:moneyfex_auxagent/pages/ForgotPassword/forgotPasswordEnterInformation_page.dart';
 import 'package:moneyfex_auxagent/pages/SetFee/exchangeFeeList_page.dart';
 import 'package:moneyfex_auxagent/pages/SuccessPages/sucess_page.dart';
 import 'package:moneyfex_auxagent/utils/constants.dart';

@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:moneyfex_auxagent/pages/Senders/addBusinessSenderBusinessInfo_page.dart';
+import 'package:moneyfex_auxagent/pages/Senders/addBusinessSenderBusinessConfirmAddressInfo_page.dart';
 import 'package:moneyfex_auxagent/widgets/appbar_widget.dart';
 import 'package:moneyfex_auxagent/widgets/button_widget.dart';
 import 'package:moneyfex_auxagent/widgets/color_widget.dart';
-import 'package:moneyfex_auxagent/widgets/indicator_widget.dart';
 import 'package:moneyfex_auxagent/widgets/navigator_widget.dart';
 
-class AddBusinessSenderConfirmAddressInfoPage extends StatefulWidget {
-  AddBusinessSenderConfirmAddressInfoPage({
+class IdentityVerificationUploadPage extends StatefulWidget {
+  IdentityVerificationUploadPage({
     Key? key,
   }) : super(key: key);
 
   @override
-  _AddBusinessSenderConfirmAddressInfoPageState createState() =>
-      _AddBusinessSenderConfirmAddressInfoPageState();
+  _IdentityVerificationUploadPageState createState() =>
+      _IdentityVerificationUploadPageState();
 }
 
-class _AddBusinessSenderConfirmAddressInfoPageState
-    extends State<AddBusinessSenderConfirmAddressInfoPage> {
+class _IdentityVerificationUploadPageState
+    extends State<IdentityVerificationUploadPage> {
+  TextEditingController registrationnumcontroller = TextEditingController();
+  TextEditingController legalnamecontroller = TextEditingController();
   TextEditingController citycontroller = TextEditingController();
-  TextEditingController addresslineonecontroller = TextEditingController();
-  TextEditingController addresslinetwocontroller = TextEditingController();
-  TextEditingController postalcodecontroller = TextEditingController();
+  TextEditingController businesstypecontroller = TextEditingController();
 
   String errormessage = "";
   String key = '';
@@ -29,7 +28,7 @@ class _AddBusinessSenderConfirmAddressInfoPageState
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: defaultAppBar(
-          titleText: "",
+          titleText: "Identity Verification",
           leading: (IconButton(
               icon: Icon(Icons.arrow_back, color: Colors.white),
               onPressed: () {
@@ -44,18 +43,60 @@ class _AddBusinessSenderConfirmAddressInfoPageState
               padding: const EdgeInsets.all(40.0),
               child: Column(
                 children: [
-                  indicator(context, 0.48),
                   SizedBox(
                     height: 20,
                   ),
-                  Text(
-                    'Confirm their operating address',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                    child: Text(
+                      '',
+                      style: TextStyle(fontSize: 8, color: defultColor),
+                    ),
                   ),
-                  Text(
-                    'Where your business actually operates from',
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
+                  SizedBox(
+                    height: 20,
                   ),
+                  TextFormField(
+                    keyboardType: TextInputType.text,
+                    controller: registrationnumcontroller,
+                    textInputAction: TextInputAction.next,
+                    decoration: InputDecoration(
+                        labelStyle: contentStyle,
+                        floatingLabelBehavior: FloatingLabelBehavior.auto,
+                        labelText: 'Business registration number',
+                        hintText: 'Business registration number'),
+                  ),
+                  key == 'registrationnum'
+                      ? Padding(
+                          padding: const EdgeInsets.only(top: 10),
+                          child: Text(
+                            errormessage,
+                            style: warningStyle,
+                          ),
+                        )
+                      : Container(),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  TextFormField(
+                    keyboardType: TextInputType.text,
+                    controller: legalnamecontroller,
+                    textInputAction: TextInputAction.next,
+                    decoration: InputDecoration(
+                        labelStyle: contentStyle,
+                        floatingLabelBehavior: FloatingLabelBehavior.auto,
+                        labelText: 'Business legal name',
+                        hintText: 'Business legal name'),
+                  ),
+                  key == 'legalname'
+                      ? Padding(
+                          padding: const EdgeInsets.only(top: 10),
+                          child: Text(
+                            errormessage,
+                            style: warningStyle,
+                          ),
+                        )
+                      : Container(),
                   SizedBox(
                     height: 20,
                   ),
@@ -83,59 +124,15 @@ class _AddBusinessSenderConfirmAddressInfoPageState
                   ),
                   TextFormField(
                     keyboardType: TextInputType.text,
-                    controller: addresslineonecontroller,
-                    textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(
-                        labelStyle: contentStyle,
-                        floatingLabelBehavior: FloatingLabelBehavior.auto,
-                        labelText: 'Address Line 1',
-                        hintText: 'Address Line 1'),
-                  ),
-                  key == 'addresslineone'
-                      ? Padding(
-                          padding: const EdgeInsets.only(top: 10),
-                          child: Text(
-                            errormessage,
-                            style: warningStyle,
-                          ),
-                        )
-                      : Container(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  TextFormField(
-                    keyboardType: TextInputType.text,
-                    controller: addresslinetwocontroller,
-                    textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(
-                        labelStyle: contentStyle,
-                        floatingLabelBehavior: FloatingLabelBehavior.auto,
-                        labelText: 'Address Line 2',
-                        hintText: 'Address Line 2 (optional)'),
-                  ),
-                  key == 'addresslinetwo'
-                      ? Padding(
-                          padding: const EdgeInsets.only(top: 10),
-                          child: Text(
-                            errormessage,
-                            style: warningStyle,
-                          ),
-                        )
-                      : Container(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  TextFormField(
-                    keyboardType: TextInputType.text,
-                    controller: postalcodecontroller,
+                    controller: businesstypecontroller,
                     textInputAction: TextInputAction.done,
                     decoration: InputDecoration(
                         labelStyle: contentStyle,
                         floatingLabelBehavior: FloatingLabelBehavior.auto,
-                        labelText: 'Postcode/Zip Code',
-                        hintText: 'Postcode/Zip Code (optional)'),
+                        labelText: 'Business type',
+                        hintText: 'Select'),
                   ),
-                  key == 'postalcode'
+                  key == 'businesstype'
                       ? Padding(
                           padding: const EdgeInsets.only(top: 10),
                           child: Text(
@@ -145,14 +142,11 @@ class _AddBusinessSenderConfirmAddressInfoPageState
                         )
                       : Container(),
                   SizedBox(
-                    height: 20,
-                  ),
-                  SizedBox(
                     height: 35,
                   ),
-                  defaultButton(context, 'Complete Setup', onPressed: () {
-                    openPage(
-                        context, (ctx) => AddBusinessSenderBusinessInfoPage());
+                  defaultButton(context, 'Continue', onPressed: () {
+                    openPage(context,
+                        (ctx) => AddBusinessSenderConfirmAddressInfoPage());
                   }),
                   SizedBox(
                     height: 15,

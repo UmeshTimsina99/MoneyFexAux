@@ -59,6 +59,7 @@ class _TransactionEstimationPageState extends State<TransactionEstimationPage> {
   int defaultTransferMethod = 1;
   bool isFirstLoad = false;
 
+  // ignore: unused_field
   String _countryPhoneCode = "+234";
 
   String errormsg = "";
@@ -73,6 +74,7 @@ class _TransactionEstimationPageState extends State<TransactionEstimationPage> {
     });
   }
 
+  // ignore: unused_element
   void _handleRadioValueChange(int value) {
     setState(() {
       // _radioValue = value;
@@ -221,7 +223,6 @@ class _TransactionEstimationPageState extends State<TransactionEstimationPage> {
   }
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     //requestModel = EstimationSummaryRequestModel();
