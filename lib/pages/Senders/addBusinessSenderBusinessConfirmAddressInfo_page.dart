@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moneyfex_auxagent/pages/IdentityVerification/identityVerificationUpload_page.dart';
 import 'package:moneyfex_auxagent/pages/Senders/addBusinessSenderBusinessInfo_page.dart';
 import 'package:moneyfex_auxagent/widgets/appbar_widget.dart';
 import 'package:moneyfex_auxagent/widgets/button_widget.dart';
@@ -152,7 +153,7 @@ class _AddBusinessSenderConfirmAddressInfoPageState
                   ),
                   defaultButton(context, 'Complete Setup', onPressed: () {
                     openPage(
-                        context, (ctx) => AddBusinessSenderBusinessInfoPage());
+                        context, (ctx) => IdentityVerificationUploadPage());
                   }),
                   SizedBox(
                     height: 15,

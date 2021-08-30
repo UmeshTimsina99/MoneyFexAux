@@ -7,6 +7,7 @@ Color whiteColor = Colors.white;
 Color blackColor = Colors.black;
 Color contentTextcolor = fromHex('#000000');
 Color dangerColor = Colors.red;
+Color dialogColor = Colors.grey;
 Color greyColor = fromHex("#EEEEEE");
 Color defultColor = fromHex("#7D7878");
 
