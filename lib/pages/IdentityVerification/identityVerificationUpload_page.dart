@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:moneyfex_auxagent/pages/Dashboard/activity_page.dart';
+import 'package:moneyfex_auxagent/pages/SuccessPages/identityCheckInSuccess_page.dart';
+import 'package:moneyfex_auxagent/utils/constants.dart';
 import 'package:moneyfex_auxagent/utils/extensions.dart';
 import 'package:moneyfex_auxagent/widgets/appbar_widget.dart';
 import 'package:moneyfex_auxagent/widgets/button_widget.dart';
@@ -523,12 +526,48 @@ class _IdentityVerificationUploadPageState
                 //                           ),
                 //                           btnText: "Done",
                 //                           onDone: () {
-                //                             openPage(
-                //                                 context,
-                //                                 (ctx) =>
-                //                                     IdentityInformationPage());
-                //                           },
-                //                         ))
+                openPage(
+                    context,
+                    (ctx) => IdentityCheckInSuccessPage(
+                          onDone: () {
+                            openPage(context, (ctx) => ActivityPage());
+                          },
+                          bodyConTitle: Text(
+                            'Your identity check is',
+                            style: contentStyle,
+                          ),
+                          bodyConTent: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                'in',
+                                style: contentStyle,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                'progress',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.normal,
+                                    color: primaryColor,
+                                    fontSize: 20),
+                              ),
+                            ],
+                          ),
+                          bodySubConTent: Text(
+                            'Outstanding transactions will be',
+                            style: contentStyle,
+                          ),
+                          bodySubConTentone: Text(
+                            'processed on completion of check',
+                            style: contentStyle,
+                          ),
+                          successIcon: SuccessIcon.info,
+                          btnText: 'Done',
+                        ));
+
                 //               }
                 //             else
                 //               {

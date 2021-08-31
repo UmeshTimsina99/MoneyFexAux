@@ -49,6 +49,7 @@ TextStyle buttomsheetbody = ((TextStyle(color: blackColor, fontSize: 14.0)));
 TextStyle buttomsheetsubbody =
     ((TextStyle(color: primaryColor, fontSize: 12.0)));
 TextStyle minisubtitile = ((TextStyle(color: defultColor, fontSize: 14.0)));
+TextStyle microsubtitile = ((TextStyle(color: defultColor, fontSize: 10.0)));
 TextStyle circleText = ((TextStyle(
     color: whiteColor, fontSize: 16.0, fontWeight: FontWeight.bold)));
 

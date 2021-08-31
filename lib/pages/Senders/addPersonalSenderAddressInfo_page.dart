@@ -1,27 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:moneyfex_auxagent/pages/Dashboard/activity_page.dart';
 import 'package:moneyfex_auxagent/pages/IdentityVerification/identityVerificationUpload_page.dart';
 import 'package:moneyfex_auxagent/pages/Senders/addBusinessSenderBusinessInfo_page.dart';
-import 'package:moneyfex_auxagent/pages/SuccessPages/identityCheckInSuccess_page.dart';
-import 'package:moneyfex_auxagent/utils/constants.dart';
 import 'package:moneyfex_auxagent/widgets/appbar_widget.dart';
 import 'package:moneyfex_auxagent/widgets/button_widget.dart';
 import 'package:moneyfex_auxagent/widgets/color_widget.dart';
 import 'package:moneyfex_auxagent/widgets/indicator_widget.dart';
 import 'package:moneyfex_auxagent/widgets/navigator_widget.dart';
 
-class AddBusinessSenderConfirmAddressInfoPage extends StatefulWidget {
-  AddBusinessSenderConfirmAddressInfoPage({
+class AddPersonalSenderAddressInfoPage extends StatefulWidget {
+  AddPersonalSenderAddressInfoPage({
     Key? key,
   }) : super(key: key);
 
   @override
-  _AddBusinessSenderConfirmAddressInfoPageState createState() =>
-      _AddBusinessSenderConfirmAddressInfoPageState();
+  _AddPersonalSenderAddressInfoPageState createState() =>
+      _AddPersonalSenderAddressInfoPageState();
 }
 
-class _AddBusinessSenderConfirmAddressInfoPageState
-    extends State<AddBusinessSenderConfirmAddressInfoPage> {
+class _AddPersonalSenderAddressInfoPageState
+    extends State<AddPersonalSenderAddressInfoPage> {
   TextEditingController citycontroller = TextEditingController();
   TextEditingController addresslineonecontroller = TextEditingController();
   TextEditingController addresslinetwocontroller = TextEditingController();
@@ -49,17 +46,6 @@ class _AddBusinessSenderConfirmAddressInfoPageState
               child: Column(
                 children: [
                   indicator(context, 0.48),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    'Confirm their operating address',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                  ),
-                  Text(
-                    'Where your business actually operates from',
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
-                  ),
                   SizedBox(
                     height: 20,
                   ),
@@ -154,48 +140,9 @@ class _AddBusinessSenderConfirmAddressInfoPageState
                   SizedBox(
                     height: 35,
                   ),
-                  defaultButton(context, 'Complete Setup', onPressed: () {
+                  defaultButton(context, 'Continue', onPressed: () {
                     openPage(
-                        context,
-                        (ctx) => IdentityCheckInSuccessPage(
-                              onDone: () {
-                                openPage(context, (ctx) => ActivityPage());
-                              },
-                              bodyConTitle: Text(
-                                'Your identity check is',
-                                style: contentStyle,
-                              ),
-                              bodyConTent: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'in',
-                                    style: contentStyle,
-                                  ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Text(
-                                    'progress',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.normal,
-                                        color: primaryColor,
-                                        fontSize: 20),
-                                  ),
-                                ],
-                              ),
-                              bodySubConTent: Text(
-                                'Outstanding transactions will be',
-                                style: contentStyle,
-                              ),
-                              bodySubConTentone: Text(
-                                'processed on completion of check',
-                                style: contentStyle,
-                              ),
-                              successIcon: SuccessIcon.info,
-                              btnText: 'Done',
-                            ));
+                        context, (ctx) => IdentityVerificationUploadPage());
                   }),
                   SizedBox(
                     height: 15,

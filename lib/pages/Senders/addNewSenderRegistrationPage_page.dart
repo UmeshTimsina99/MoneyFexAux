@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moneyfex_auxagent/pages/Senders/addBusinessSenderInformation_page.dart';
+import 'package:moneyfex_auxagent/pages/Senders/addPersonalSenderInformation_page.dart';
 import 'package:moneyfex_auxagent/widgets/appbar_widget.dart';
 import 'package:moneyfex_auxagent/widgets/color_widget.dart';
 import 'package:moneyfex_auxagent/widgets/navigator_widget.dart';
@@ -40,7 +41,8 @@ class _AddNewSenderRegistrationPageState
             children: [
               InkResponse(
                 onTap: () {
-                  //openPage(context, (ctx) => LoginInformationPage());
+                  openPage(
+                      context, (ctx) => AddPersonalSenderInformationPage());
                 },
                 child: Container(
                   width: 120,

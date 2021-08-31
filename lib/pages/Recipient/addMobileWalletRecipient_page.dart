@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:moneyfex_auxagent/pages/Dashboard/activity_page.dart';
+import 'package:moneyfex_auxagent/pages/Common/recipientsList_page.dart';
 import 'package:moneyfex_auxagent/pages/IdentityVerification/identityVerificationUpload_page.dart';
-import 'package:moneyfex_auxagent/pages/Senders/addBusinessSenderBusinessInfo_page.dart';
-import 'package:moneyfex_auxagent/pages/SuccessPages/identityCheckInSuccess_page.dart';
+import 'package:moneyfex_auxagent/pages/SuccessPages/addRecipientSuccess_page.dart';
 import 'package:moneyfex_auxagent/utils/constants.dart';
 import 'package:moneyfex_auxagent/widgets/appbar_widget.dart';
 import 'package:moneyfex_auxagent/widgets/button_widget.dart';
@@ -10,22 +9,22 @@ import 'package:moneyfex_auxagent/widgets/color_widget.dart';
 import 'package:moneyfex_auxagent/widgets/indicator_widget.dart';
 import 'package:moneyfex_auxagent/widgets/navigator_widget.dart';
 
-class AddBusinessSenderConfirmAddressInfoPage extends StatefulWidget {
-  AddBusinessSenderConfirmAddressInfoPage({
+class AddMobileWalletRecipientPage extends StatefulWidget {
+  AddMobileWalletRecipientPage({
     Key? key,
   }) : super(key: key);
 
   @override
-  _AddBusinessSenderConfirmAddressInfoPageState createState() =>
-      _AddBusinessSenderConfirmAddressInfoPageState();
+  _AddMobileWalletRecipientPageState createState() =>
+      _AddMobileWalletRecipientPageState();
 }
 
-class _AddBusinessSenderConfirmAddressInfoPageState
-    extends State<AddBusinessSenderConfirmAddressInfoPage> {
-  TextEditingController citycontroller = TextEditingController();
-  TextEditingController addresslineonecontroller = TextEditingController();
-  TextEditingController addresslinetwocontroller = TextEditingController();
-  TextEditingController postalcodecontroller = TextEditingController();
+class _AddMobileWalletRecipientPageState
+    extends State<AddMobileWalletRecipientPage> {
+  TextEditingController countrycontroller = TextEditingController();
+  TextEditingController walletcontroller = TextEditingController();
+  TextEditingController recipientFullNamecontroller = TextEditingController();
+  TextEditingController mobilenumbercontroller = TextEditingController();
 
   String errormessage = "";
   String key = '';
@@ -33,7 +32,7 @@ class _AddBusinessSenderConfirmAddressInfoPageState
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: defaultAppBar(
-          titleText: "",
+          titleText: "Mobile Wallet",
           leading: (IconButton(
               icon: Icon(Icons.arrow_back, color: Colors.white),
               onPressed: () {
@@ -48,32 +47,30 @@ class _AddBusinessSenderConfirmAddressInfoPageState
               padding: const EdgeInsets.all(40.0),
               child: Column(
                 children: [
-                  indicator(context, 0.48),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    'Confirm their operating address',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                  ),
-                  Text(
-                    'Where your business actually operates from',
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'New recipient',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ],
                   ),
                   SizedBox(
                     height: 20,
                   ),
                   TextFormField(
                     keyboardType: TextInputType.text,
-                    controller: citycontroller,
+                    controller: countrycontroller,
                     textInputAction: TextInputAction.next,
                     decoration: InputDecoration(
                         labelStyle: contentStyle,
                         floatingLabelBehavior: FloatingLabelBehavior.auto,
-                        labelText: 'City',
-                        hintText: 'City'),
+                        labelText: 'Country',
+                        hintText: 'Select Country'),
                   ),
-                  key == 'city'
+                  key == 'country'
                       ? Padding(
                           padding: const EdgeInsets.only(top: 10),
                           child: Text(
@@ -87,15 +84,15 @@ class _AddBusinessSenderConfirmAddressInfoPageState
                   ),
                   TextFormField(
                     keyboardType: TextInputType.text,
-                    controller: addresslineonecontroller,
+                    controller: walletcontroller,
                     textInputAction: TextInputAction.next,
                     decoration: InputDecoration(
                         labelStyle: contentStyle,
                         floatingLabelBehavior: FloatingLabelBehavior.auto,
-                        labelText: 'Address Line 1',
-                        hintText: 'Address Line 1'),
+                        labelText: 'Wallet',
+                        hintText: 'Select wallet'),
                   ),
-                  key == 'addresslineone'
+                  key == 'wallet'
                       ? Padding(
                           padding: const EdgeInsets.only(top: 10),
                           child: Text(
@@ -109,15 +106,15 @@ class _AddBusinessSenderConfirmAddressInfoPageState
                   ),
                   TextFormField(
                     keyboardType: TextInputType.text,
-                    controller: addresslinetwocontroller,
+                    controller: recipientFullNamecontroller,
                     textInputAction: TextInputAction.next,
                     decoration: InputDecoration(
                         labelStyle: contentStyle,
                         floatingLabelBehavior: FloatingLabelBehavior.auto,
-                        labelText: 'Address Line 2',
-                        hintText: 'Address Line 2 (optional)'),
+                        labelText: 'Recipient full name',
+                        hintText: 'Recipient full name'),
                   ),
-                  key == 'addresslinetwo'
+                  key == 'recipientFullName'
                       ? Padding(
                           padding: const EdgeInsets.only(top: 10),
                           child: Text(
@@ -131,15 +128,15 @@ class _AddBusinessSenderConfirmAddressInfoPageState
                   ),
                   TextFormField(
                     keyboardType: TextInputType.text,
-                    controller: postalcodecontroller,
+                    controller: mobilenumbercontroller,
                     textInputAction: TextInputAction.done,
                     decoration: InputDecoration(
                         labelStyle: contentStyle,
                         floatingLabelBehavior: FloatingLabelBehavior.auto,
-                        labelText: 'Postcode/Zip Code',
-                        hintText: 'Postcode/Zip Code (optional)'),
+                        labelText: 'Mobile number',
+                        hintText: 'Mobile number'),
                   ),
-                  key == 'postalcode'
+                  key == 'mobilenumber'
                       ? Padding(
                           padding: const EdgeInsets.only(top: 10),
                           child: Text(
@@ -154,46 +151,20 @@ class _AddBusinessSenderConfirmAddressInfoPageState
                   SizedBox(
                     height: 35,
                   ),
-                  defaultButton(context, 'Complete Setup', onPressed: () {
+                  defaultButton(context, 'Confirm and add', onPressed: () {
                     openPage(
                         context,
-                        (ctx) => IdentityCheckInSuccessPage(
+                        (ctx) => AddRecipientSuccessPage(
                               onDone: () {
-                                openPage(context, (ctx) => ActivityPage());
+                                openPage(context, (ctx) => RecipientListPage());
                               },
-                              bodyConTitle: Text(
-                                'Your identity check is',
-                                style: contentStyle,
+                              bodyConTitle:
+                                  Text("You've added", style: contentStyle),
+                              recipientName: Text(
+                                'Ukesh Raj',
+                                style: titleStyle,
                               ),
-                              bodyConTent: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'in',
-                                    style: contentStyle,
-                                  ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Text(
-                                    'progress',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.normal,
-                                        color: primaryColor,
-                                        fontSize: 20),
-                                  ),
-                                ],
-                              ),
-                              bodySubConTent: Text(
-                                'Outstanding transactions will be',
-                                style: contentStyle,
-                              ),
-                              bodySubConTentone: Text(
-                                'processed on completion of check',
-                                style: contentStyle,
-                              ),
-                              successIcon: SuccessIcon.info,
+                              successIcon: SuccessIcon.success,
                               btnText: 'Done',
                             ));
                   }),
