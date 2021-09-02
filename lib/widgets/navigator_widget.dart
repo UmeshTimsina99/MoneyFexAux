@@ -4,6 +4,7 @@ void openPage(context, Function(BuildContext ctx) builder) {
   Navigator.push(
       context,
       MaterialPageRoute(
+          // ignore: unnecessary_null_comparison
           builder: builder == null ? getemptyfunction() : builder));
 }
 

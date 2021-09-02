@@ -8,6 +8,7 @@ import 'package:moneyfex_auxagent/widgets/navigator_widget.dart';
 
 import 'forgotPasswordEnterPassword_page.dart';
 
+// ignore: must_be_immutable
 class ForgotPasswordEnterOtpCodePage extends StatefulWidget {
   final VoidCallback ontap;
   String phoneno;
@@ -70,7 +71,7 @@ class _ForgotPasswordEnterOtpCodePageState
 
   @override
   void initState() {
-    // TODO: implement initState
+  
     super.initState();
 
     startTimer();
@@ -81,6 +82,7 @@ class _ForgotPasswordEnterOtpCodePageState
   }
 
   void focusOnNextNode(FocusScopeNode node, String text) {
+    // ignore: unnecessary_null_comparison
     if (text != null && text != "") {
       node.nextFocus();
     }
@@ -112,8 +114,10 @@ class _ForgotPasswordEnterOtpCodePageState
             ),
             Text(
                 "We've sent it to " +
+                    // ignore: unnecessary_null_comparison
                     (widget.phoneno == null ? "" : widget.phoneno) +
                     "and to" +
+                    // ignore: unnecessary_null_comparison
                     (widget.email == null ? "" : widget.email),
                 style: TextStyle(fontSize: 16.0, color: primaryColor)),
             // Text("and to" + (widget.phoneno == null ? "" : widget.phoneno),

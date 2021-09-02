@@ -31,6 +31,7 @@ class _DashboardPageState extends State<DashboardPage> {
   int _notetake = 10;
   int _noteskip = 0;
   int bottomSelectedIndex = 0;
+  // ignore: unused_field
   int _transskip = 0;
   //  List<NotificationModel> listofnotification = [];
   List<dynamic> listofnotification = [];

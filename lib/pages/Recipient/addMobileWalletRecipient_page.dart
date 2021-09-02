@@ -67,7 +67,7 @@ class _AddMobileWalletRecipientPageState
                     decoration: InputDecoration(
                         labelStyle: contentStyle,
                         floatingLabelBehavior: FloatingLabelBehavior.auto,
-                        labelText: 'Country',
+                        labelText: 'Select Country',
                         hintText: 'Select Country'),
                   ),
                   key == 'country'
@@ -89,7 +89,7 @@ class _AddMobileWalletRecipientPageState
                     decoration: InputDecoration(
                         labelStyle: contentStyle,
                         floatingLabelBehavior: FloatingLabelBehavior.auto,
-                        labelText: 'Wallet',
+                        labelText: 'Select wallet',
                         hintText: 'Select wallet'),
                   ),
                   key == 'wallet'

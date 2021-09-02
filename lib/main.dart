@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:moneyfex_auxagent/pages/Common/recipientsList_page.dart';
 import 'package:moneyfex_auxagent/pages/Dashboard/activity_page.dart';
-import 'package:moneyfex_auxagent/pages/Recipient/selectServiceForAddRecipient_page.dart';
-import 'package:moneyfex_auxagent/pages/Senders/addPersonalSenderInformation_page.dart';
 import 'package:overlay_support/overlay_support.dart';
 
 void main() {
@@ -30,7 +27,7 @@ class MyApp extends StatelessWidget {
           ),
           // home: LoginOrSignupView()),
           // home: ActivityPage()),
-          home: SelectServiceForAddRecipientPage()),
+          home: ActivityPage()),
     );
   }
 }

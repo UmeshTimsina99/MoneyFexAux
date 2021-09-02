@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moneyfex_auxagent/pages/Common/transactionSummary_page.dart';
 import 'package:moneyfex_auxagent/pages/Recipient/selectServiceForAddRecipient_page.dart';
 import 'package:moneyfex_auxagent/pages/Senders/addNewSenderRegistrationPage_page.dart';
 import 'package:moneyfex_auxagent/widgets/appbar_widget.dart';
@@ -39,7 +40,7 @@ class _RecipientListPageState extends State<RecipientListPage> {
                   ),
                   ListTile(
                       onTap: () {
-                        // openPage(context,            (ctx) => TransactionEstimationPage());
+                        openPage(context, (ctx) => TransactionSummaryPage());
                       },
                       title: Row(
                         children: [

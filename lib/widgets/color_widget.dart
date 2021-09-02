@@ -52,8 +52,10 @@ TextStyle minisubtitile = ((TextStyle(color: defultColor, fontSize: 14.0)));
 TextStyle microsubtitile = ((TextStyle(color: defultColor, fontSize: 10.0)));
 TextStyle circleText = ((TextStyle(
     color: whiteColor, fontSize: 16.0, fontWeight: FontWeight.bold)));
-
+TextStyle reviewtitleStyle =
+    TextStyle(fontWeight: FontWeight.normal, color: primaryColor, fontSize: 18);
 TextStyle deleverystyle = TextStyle(
     fontWeight: FontWeight.normal, color: secondaryColor, fontSize: 10);
 TextStyle flatbuttonStyle =
     TextStyle(fontWeight: FontWeight.normal, color: whiteColor, fontSize: 20);
+TextStyle reviewtextStyle = TextStyle(color: secondaryColor, fontSize: 14);

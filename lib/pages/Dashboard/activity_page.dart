@@ -17,6 +17,7 @@ class ActivityPage extends StatefulWidget {
 /// This is the private State class that goes with MyStatefulWidget.
 class _ActivityPageState extends State<ActivityPage> {
   int _selectedIndex = 0;
+  // ignore: unused_field
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   List _widgetOptions = [

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:moneyfex_auxagent/pages/Recipient/addBankAccountDepositRecipient_page.dart';
+import 'package:moneyfex_auxagent/pages/Recipient/addCashPickupRecipient_page.dart';
 import 'package:moneyfex_auxagent/pages/Recipient/addMobileWalletRecipient_page.dart';
+import 'package:moneyfex_auxagent/pages/Recipient/addkiipayRecipient_page.dart';
 import 'package:moneyfex_auxagent/widgets/appbar_widget.dart';
 import 'package:moneyfex_auxagent/widgets/color_widget.dart';
 import 'package:moneyfex_auxagent/widgets/navigator_widget.dart';
@@ -35,122 +38,148 @@ class _SelectServiceForAddRecipientPageState
           mainAxisSpacing: 10,
           maxCrossAxisExtent: 200.0,
           children: <Widget>[
-            Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: whiteColor,
-                  border: Border.all(
-                    color: primaryColor,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 2,
-                      blurRadius: 4,
-                      offset: Offset(0, 3), // changes position of shadow
+            InkWell(
+              onTap: () {
+                openPage(
+                    context, (ctx) => AddBankAccountDepositRecipientPage());
+              },
+              highlightColor: blackColor.withOpacity(0.3),
+              splashColor: whiteColor,
+              child: Container(
+                  decoration: BoxDecoration(
+                    color: whiteColor,
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: primaryColor,
                     ),
-                  ],
-                ),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          child: IconButton(
-                        icon: Image.asset(
-                          "assets/images/bank.png",
-                        ),
-                        onPressed: () {
-                          // navigateBankTransfer();
-                          //openPage(context, (ctx) => AddBankAccountDepositRecipientPage());
-                        },
-                      )),
-                      Text('Bank Account', style: titleStyle3)
-                    ])),
-            Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: whiteColor,
-                  border: Border.all(
-                    color: primaryColor,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 4,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 2,
-                      blurRadius: 4,
-                      offset: Offset(0, 3), // changes position of shadow
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                            child: IconButton(
+                          icon: Image.asset(
+                            "assets/images/bank.png",
+                          ),
+                          onPressed: () {
+                            // navigateBankTransfer();
+                            openPage(context,
+                                (ctx) => AddBankAccountDepositRecipientPage());
+                          },
+                        )),
+                        Text('Bank Account', style: titleStyle3)
+                      ])),
+            ),
+            InkWell(
+              onTap: () {
+                openPage(context, (ctx) => AddMobileWalletRecipientPage());
+              },
+              child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: whiteColor,
+                    border: Border.all(
+                      color: primaryColor,
                     ),
-                  ],
-                ),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          child: IconButton(
-                        icon: Image.asset("assets/images/mobile-money.png"),
-                        onPressed: () {
-                          openPage(
-                              context, (ctx) => AddMobileWalletRecipientPage());
-                        },
-                      )),
-                      Text('Mobile Wallet', style: titleStyle3)
-                    ])),
-            Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: whiteColor,
-                  border: Border.all(
-                    color: primaryColor,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 4,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 2,
-                      blurRadius: 4,
-                      offset: Offset(0, 3), // changes position of shadow
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                            child: IconButton(
+                          icon: Image.asset("assets/images/mobile-money.png"),
+                          onPressed: () {
+                            openPage(context,
+                                (ctx) => AddMobileWalletRecipientPage());
+                          },
+                        )),
+                        Text('Mobile Wallet', style: titleStyle3)
+                      ])),
+            ),
+            InkWell(
+              onTap: () {
+                openPage(context, (ctx) => AddCashPickupRecipientPage());
+              },
+              child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: whiteColor,
+                    border: Border.all(
+                      color: primaryColor,
                     ),
-                  ],
-                ),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          child: IconButton(
-                        icon: Image.asset("assets/images/cash-pickup.png"),
-                        onPressed: () {
-                          //openPage(context, (ctx) => AddCashPickupRecipientPage());
-                        },
-                      )),
-                      Text('Cash Pickup', style: titleStyle3)
-                    ])),
-            Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: whiteColor,
-                  border: Border.all(
-                    color: primaryColor,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 4,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 2,
-                      blurRadius: 4,
-                      offset: Offset(0, 3), // changes position of shadow
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                            child: IconButton(
+                          icon: Image.asset("assets/images/cash-pickup.png"),
+                          onPressed: () {
+                            openPage(
+                                context, (ctx) => AddCashPickupRecipientPage());
+                          },
+                        )),
+                        Text('Cash Pickup', style: titleStyle3)
+                      ])),
+            ),
+            InkWell(
+              onTap: () {
+                openPage(context, (ctx) => AddKiipayRecipientPage());
+              },
+              child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: whiteColor,
+                    border: Border.all(
+                      color: primaryColor,
                     ),
-                  ],
-                ),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          child: IconButton(
-                        icon: Image.asset("assets/images/kiipay.png"),
-                        onPressed: () {
-                          //openPage(context, (ctx) => AddKiipayRecipientPage());
-                        },
-                      )),
-                      Text('KiiPay Wallet', style: titleStyle3)
-                    ])),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 4,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                            child: IconButton(
+                          icon: Image.asset("assets/images/kiipay.png"),
+                          onPressed: () {
+                            openPage(
+                                context, (ctx) => AddKiipayRecipientPage());
+                          },
+                        )),
+                        Text('KiiPay Wallet', style: titleStyle3)
+                      ])),
+            ),
           ],
         ),
       ),

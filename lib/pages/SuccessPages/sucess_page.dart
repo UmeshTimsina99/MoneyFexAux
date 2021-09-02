@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:moneyfex_auxagent/utils/constants.dart';
 import 'package:moneyfex_auxagent/widgets/button_widget.dart';
 
+// ignore: must_be_immutable
 class SuccessPage extends StatefulWidget {
   Widget? bodyConTent;
   Widget? bodySubConTent;
